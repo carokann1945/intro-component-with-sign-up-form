@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600&display=swap');
+@import 'tailwindcss';
+
+/* 3. 로컬 폰트 정의 (Pretendard) */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920; /* 가변 폰트 굵기 범위 */
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/PretendardVariable.woff2') format('woff2');
+}
+
+@theme inline {
+  --font-notosanskr: 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+  --font-pretendard: 'Pretendard Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 6. 전역 기본 폰트 적용 */
+body {
+  font-family: var(--font-pretendard);
+}
