@@ -1,21 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 @import 'tailwindcss';
 
-/* 3. 로컬 폰트 정의 (Pretendard) */
-@font-face {
-  font-family: 'Pretendard Variable';
-  font-weight: 45 920; /* 가변 폰트 굵기 범위 */
-  font-style: normal;
-  font-display: swap;
-  src: url('./assets/fonts/PretendardVariable.woff2') format('woff2');
-}
-
 @theme inline {
-  --font-notosanskr: 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
-  --font-pretendard: 'Pretendard Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* Font Sizes */
+  --font-size-preset-1: 50px;
+  --font-size-preset-2: 28px;
+  --font-size-preset-3: 16px;
+  --font-size-preset-4: 15px;
+  --font-size-preset-5: 11px;
+
+  /* Line Heights */
+  --line-height-preset-1: 110%;
+  --line-height-preset-2: 130%;
+  --line-height-preset-3: 165%;
+  --line-height-preset-4: 175%;
+  --line-height-preset-5-regular: 190%;
+  --line-height-preset-5-italic: 155%;
+
+  /* Letter Spacings */
+  --letter-spacing-preset-1: -0.5px;
+  --letter-spacing-preset-2: -0.3px;
+  --letter-spacing-preset-3: 0px;
+  --letter-spacing-preset-4-default: 0.25px;
+  --letter-spacing-preset-4-semibold: 2px;
+  --letter-spacing-preset-5: 0px;
+
+  /* Gray */
+  --color-gray-900: #3d3b48; /* RGB 61, 59, 72   — HSL 249°, 10%, 26% */
+  --color-gray-200: #dedede; /* RGB 222, 222, 222 — HSL 0°,   0%, 87% */
+
+  /* Purple */
+  --color-purple-700: #5e54a4; /* RGB 94, 84, 164   — HSL 248°, 32%, 49% */
+  --color-purple-400: #a6a1cf; /* RGB 166, 161, 207 — HSL 247°, 32%, 72% */
+  --color-purple-350: #bab7d4; /* RGB 186, 183, 212 — HSL 246°, 25%, 77% */
+
+  /* Green */
+  --color-green-400: #38cc8b; /* RGB 56, 204, 139  — HSL 154°, 59%, 51% */
+  --color-green-300: #77e2b3; /* RGB 119, 226, 179 — HSL 154°, 65%, 68% */
+
+  /* Red */
+  --color-red-400: #ff7979; /* RGB 255, 121, 121 — HSL 0°, 100%, 74% */
+
+  --shadow-hard: 0px 8px 0px rgba(0, 0, 0, 0.15);
+  --shadow-hard-green-600: 0px 4px 0px rgba(22, 163, 74, 0.8);
+  --shadow-hard-green-900: 0px 4px 0px rgba(20, 83, 45, 0.8);
 }
 
-/* 6. 전역 기본 폰트 적용 */
-body {
-  font-family: var(--font-pretendard);
+/* Preset 1 — Poppins Bold / 50px / 110% / -0.5px */
+@utility typo-preset-1 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-1);
+  font-weight: 700;
+  line-height: var(--line-height-preset-1);
+  letter-spacing: var(--letter-spacing-preset-1);
+}
+
+/* Preset 2 — Poppins Bold / 28px / 130% / -0.3px */
+@utility typo-preset-2 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-2);
+  font-weight: 700;
+  line-height: var(--line-height-preset-2);
+  letter-spacing: var(--letter-spacing-preset-2);
+}
+
+/* Preset 3 — Poppins Medium / 16px / 165% / 0px */
+@utility typo-preset-3 {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-3);
+  font-weight: 500;
+  line-height: var(--line-height-preset-3);
+  letter-spacing: var(--letter-spacing-preset-3);
+}
+
+/* Preset 4 Bold — Poppins Bold / 15px / 175% / 0.25px */
+@utility typo-preset-4-bold {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-4);
+  font-weight: 700;
+  line-height: var(--line-height-preset-4);
+  letter-spacing: var(--letter-spacing-preset-4-default);
+}
+
+/* Preset 4 SemiBold — Poppins SemiBold / 15px / 175% / 2px */
+@utility typo-preset-4-semibold {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-4);
+  font-weight: 600;
+  line-height: var(--line-height-preset-4);
+  letter-spacing: var(--letter-spacing-preset-4-semibold);
+}
+
+/* Preset 4 Regular — Poppins Regular / 15px / 175% / 0.25px */
+@utility typo-preset-4-regular {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-4);
+  font-weight: 400;
+  line-height: var(--line-height-preset-4);
+  letter-spacing: var(--letter-spacing-preset-4-default);
+}
+
+/* Preset 5 Bold — Poppins Bold / 11px / 190% / 0px */
+@utility typo-preset-5-bold {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-5);
+  font-weight: 700;
+  line-height: var(--line-height-preset-5-regular);
+  letter-spacing: var(--letter-spacing-preset-5);
+}
+
+/* Preset 5 Medium — Poppins Medium / 11px / 190% / 0px */
+@utility typo-preset-5-medium {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-5);
+  font-weight: 500;
+  line-height: var(--line-height-preset-5-regular);
+  letter-spacing: var(--letter-spacing-preset-5);
+}
+
+/* Preset 5 Medium Italic — Poppins Medium Italic / 11px / 155% / 0px */
+@utility typo-preset-5-medium-italic {
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-preset-5);
+  font-weight: 500;
+  font-style: italic;
+  line-height: var(--line-height-preset-5-italic);
+  letter-spacing: var(--letter-spacing-preset-5);
 }
